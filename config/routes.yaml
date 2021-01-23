@@ -1,0 +1,39 @@
+contact:
+  path: /contact
+  controller: App\Controller\DefaultController::contact
+
+boutique:
+  path: /boutique
+  controller: App\Controller\DefaultController::boutique
+
+fruits:
+  path: /fruits
+  controller: App\Controller\DefaultController::fruits
+
+junk:
+  path: /junk
+  controller: App\Controller\DefaultController::junk
+
+legumes:
+  path: /legumes
+  controller: App\Controller\DefaultController::legumes
+
+virus:
+  path: /virus
+  controller: App\Controller\DefaultController::virus
+
+panier:
+  path: /panier
+  controller: App\Controller\DefaultController::panier
+
+rayon:
+  path: /rayon/{idCategorie}
+  controller: App\Controller\DefaultController::rayon
+  defaults:
+    idCategorie: ''
+
+index:
+  path: /{userName}
+  controller: App\Controller\DefaultController::index
+  defaults:
+    userName: ''

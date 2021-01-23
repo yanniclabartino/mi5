@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel="stylesheet" href="public/css/style.css">
+            <script src="https://kit.fontawesome.com/5b938fc7f9.js" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            {% include 'navbar.html.twig' %}
+
+            {% block content %}
+                {% for c in categories %}
+                    <div>
+                        <h2>{{ c["libelle"] }}</h2>
+                        <img src="{{ c["visuel"] }}">
+                        <p>{{ c["texte"] }}</p>
+                    </div>
+                {% endfor %}
+            {% endblock %}
+        {% endblock %}
+        {% block script %}{% endblock %}
+    </body>
+</html>
